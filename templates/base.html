@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}{% if page_title %}{{page_title}} - {% endif %}{{site_name}}{% endblock %}</title>
+        <meta name="keywords" content="{{palabras_claves}}" />
+        <meta name="description" content="{{descripcion}}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+        <link href="{% static 'vistaprevia/css/jquery-ui.css' %}" rel="stylesheet">
+
+    </head>
+    <body>
+        {% block contenedor %}{% endblock %}
+        {% block scripts %}{% endblock %}
+    </body>
+</html>
+
+

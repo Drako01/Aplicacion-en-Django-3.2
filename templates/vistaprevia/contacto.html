@@ -1,0 +1,50 @@
+{% extends "plantilla.html"%}
+{% load static %}
+{% load  i18n %}
+{% block content %}
+        <div class="container">
+            <div class="jumbotron">
+                <h1>Página de contacto.</h1>
+            </div>
+        </div>
+
+        <main class="container-fluid">
+            <div id="formulario_contacto" class="row">
+
+                    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+                        <h2>Contacto</h2>
+                        <hr/>
+                        <form id="contact" action="" method="post" class="col-xs-12">
+                            <div class="col-xs-12">
+                                <label id="label_nombre_completo" for="id_nombre_completo">NOMBRE Y APELLIDO</label>
+                                <input type="text" name="nombre">
+                            </div>
+                            <div class="col-xs-12">
+                                <label id="label_email" for="id_email">EMAIL</label>
+                                <input type="text" name="mail"/>
+                            </div>
+                            <div class="col-xs-12">
+                                <label  for="id_fecha">Fecha Límite de entrega</label>
+                                <input id="id_fecha"  type="text" name="fecha"/>
+                            </div>
+                            <div class="col-xs-12">
+                                <label id="label_mensaje" for="id_mensaje">CONSULTA</label>
+                                <textarea name="consulta" ></textarea>
+                            </div>
+                            <button type="submit" class="col-xs-offset-3 col-xs-6 btn btn-default bt-form">Enviar</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'vistaprevia/js/jquery-ui.js' %}"></script>
+    <script> $("#id_fecha" ).datepicker({
+             inline: true
+             });
+    </script>
+{% endblock %}
+
